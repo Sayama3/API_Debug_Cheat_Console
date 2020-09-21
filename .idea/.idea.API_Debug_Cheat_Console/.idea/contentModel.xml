@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ianpo\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ianpo\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_API_Debug_Cheat_Console.-424672681.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ianpo\Documents\GitHub\API_Debug_Cheat_Console" t="IncludeRecursive">
+      <e p="API_Debug_Cheat_Console.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Debug_Cheat_Console" t="Include">
+          <e p="InputSystem" t="Include">
+            <e p="Input_Player.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="CheatConsoleManager.cs" t="Include" />
+            <e p="DebugCommand.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
