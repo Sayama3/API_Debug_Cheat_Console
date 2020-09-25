@@ -14,6 +14,9 @@ namespace Debug_Cheat_Console
 
 		private static CheatConsoleManager _instance;
 
+		/// <summary>
+		/// Singleton of the CheatConsoleManager
+		/// </summary>
 		public static CheatConsoleManager Instance
 		{
 			get
@@ -61,6 +64,9 @@ namespace Debug_Cheat_Console
 
 		#region Getter/Setter
 
+		/// <summary>
+		/// Is the game initialize
+		/// </summary>
 		public bool Initialize => _initialize;
 
 		#endregion
@@ -70,7 +76,7 @@ namespace Debug_Cheat_Console
 		/// <summary>
 		/// Command Listing every other command.
 		/// </summary>
-		public static DebugCommand HELP { get; private set; }
+		public static DebugCommandBase HELP { get; private set; }
 
 		
 		/// <summary>
@@ -94,14 +100,13 @@ namespace Debug_Cheat_Console
 
 		private void InitializeCommands()
 		{
-			HELP = new DebugCommand("help", "Show a list of command.", "help",
-				() => _showHelp = !_showHelp);
+			HELP = new DebugCommandBase("help", "Show/Hide the list of the actual commands.", "help");
 			
 			if(_dicoCommandsActivation == null)
 				_dicoCommandsActivation = new Dictionary<DebugCommandBase, Action<DebugCommandBase, string[]>>();
 
 			if (!_dicoCommandsActivation.ContainsKey(HELP))
-				_dicoCommandsActivation.Add(HELP, (command, properties) => ((DebugCommand) command).Invoke());
+				_dicoCommandsActivation.Add(HELP, (command, properties) => _showHelp = !_showHelp);
 
 		}
 
@@ -191,17 +196,17 @@ namespace Debug_Cheat_Console
 		/// Add a command to the possible command
 		/// </summary>
 		/// <param name="command">The command we want to add</param>
-		/// <param name="activation">
-		///	The action to launch the command taking as parameter<br />
+		/// <param name="actionCommand">
+		///	The action associate to the command taking as parameter<br />
 		/// 	- The associate command (previous parameters)<br />
 		/// 	- An array of string containing the command and every associate parameters
 		/// </param>
 		/// <returns></returns>
-		public bool Subscribe(DebugCommandBase command,Action<DebugCommandBase,string[]> activation)
+		public bool Subscribe(DebugCommandBase command,Action<DebugCommandBase,string[]> actionCommand)
 		{
 			if (_dicoCommandsActivation.ContainsKey(command)) return false;
 			
-			_dicoCommandsActivation.Add(command,activation);
+			_dicoCommandsActivation.Add(command,actionCommand);
 			return true;
 		}
 

@@ -24,10 +24,8 @@ public class TemplateGameScript : MonoBehaviour
         _slider.value = fuelBorn.y;
         begin = fuelBorn.y;
         CheatConsoleManager.Instance.Subscribe(
-            new DebugCommand<float>("Set_Fuel", "Set the amount of fuel", "Set_Fuel <amount>",
-                amount => begin = amount),
-            (command, properties) =>
-                ((DebugCommand<float>) command).Invoke(float.Parse(properties[1])));
+            new DebugCommandBase("set_fuel", "Set the amount of fuel", "set_fuel <amount>"),
+            (command, properties) => begin = float.Parse(properties[1]));
     }
 
     private void Update()

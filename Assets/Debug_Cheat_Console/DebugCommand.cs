@@ -2,6 +2,9 @@
 
 namespace Debug_Cheat_Console
 {
+    /// <summary>
+    /// A Class with all information needed from a command
+    /// </summary>
     public class DebugCommandBase
     {
         #region Variable
@@ -14,8 +17,18 @@ namespace Debug_Cheat_Console
 
         #region Getters/Setters
 
+        /// <summary>
+        /// The Id of the command
+        /// </summary>
         public string CommandID => _commandID;
+        /// <summary>
+        /// The description of the command. What does he do
+        /// </summary>
         public string CommandDescription => _commandDescription;
+        /// <summary>
+        /// The format of the command, (name + every parameters) <br />
+        /// Useful in the HELP command for exemple
+        /// </summary>
         public string CommandFormat => _commandFormat;
 
         #endregion
@@ -27,66 +40,8 @@ namespace Debug_Cheat_Console
             _commandDescription = description;
             _commandFormat = format;
         }
-        
-    }
 
-    public class DebugCommand : DebugCommandBase
-    {
-        private Action _command;
+        public DebugCommandBase(){}
 
-        public DebugCommand(string id, string description, string format, Action command) : base(id, description, format)
-        {
-            _command = command;
-        }
-
-        public void Invoke()
-        {
-            _command.Invoke();
-        }
-    }
-
-    public class DebugCommand<T1> : DebugCommandBase
-    {
-        private Action<T1> _command;
-
-        public DebugCommand(string id, string description, string format, Action<T1> command) : base(id, description, format)
-        {
-            _command = command;
-        }
-
-        public void Invoke(T1 value)
-        {
-            _command.Invoke(value);
-        }
-    }
-    
-    public class DebugCommand<T1,T2> : DebugCommandBase
-    {
-        private Action<T1,T2> _command;
-
-        public DebugCommand(string id, string description, string format, Action<T1,T2> command) : base(id, description, format)
-        {
-            _command = command;
-        }
-
-        public void Invoke(T1 value1,T2 value2)
-        {
-            _command.Invoke(value1,value2);
-        }
-    }
-    
-    public class DebugCommand<T1,T2,T3> : DebugCommandBase
-    {
-        private Action<T1,T2,T3> _command;
-
-        public DebugCommand(string id, string description, string format, Action<T1,T2,T3> command) : base(id, description, format)
-        {
-            _command = command;
-        }
-
-        public void Invoke(T1 value1,T2 value2,T3 value3)
-        {
-            _command.Invoke(value1,value2,value3);
-        }
     }
 }
