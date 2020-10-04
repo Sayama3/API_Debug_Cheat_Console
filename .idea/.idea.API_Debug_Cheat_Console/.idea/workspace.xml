@@ -5,9 +5,33 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API_Debug_Cheat_Console/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/DebugCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/DebugCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/DebugCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/DebugCommand.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/READE_ME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/READE_ME.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scene/Template_01.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scene/Template_01.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/InputSystem.inputsettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/InputSystem.inputsettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/Input_Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/Input_Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/Input_Player.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/InputSystem/Input_Player.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/Preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/Preset/Default CheatConsoleManager.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Usefull/Preset/Default CheatConsoleManager.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,15 +41,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Packages/DebugCheatConsole/Runtime/CheatConsoleManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/InputValue.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Scripts/DebugController.cs" />
         <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Scripts/DebugCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Scripts/CheatConsoleManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/DebugCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/CheatConsoleManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Debug_Cheat_Console/Template/Scripts/TemplateGameScript.cs" />
+        <option value="$PROJECT_DIR$/Packages/DebugCheatConsole/Runtime/DebugCommand.cs" />
+        <option value="$PROJECT_DIR$/Packages/DebugCheatConsole/Tests/Runtime/TemplateGameScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tester$.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tester.cs" />
+        <option value="$PROJECT_DIR$/Packages/DebugCheatConsole/Runtime/CheatConsoleManager.cs" />
       </list>
     </option>
   </component>
@@ -78,7 +111,11 @@
       <updated>1600691419656</updated>
       <workItem from="1600691425215" duration="64000" />
       <workItem from="1600691648337" duration="10902000" />
-      <workItem from="1601020222828" duration="1155000" />
+      <workItem from="1601020222828" duration="5870000" />
+      <workItem from="1601038467017" duration="2299000" />
+      <workItem from="1601294817871" duration="690000" />
+      <workItem from="1601837047201" duration="26000" />
+      <workItem from="1601837088382" duration="5550000" />
     </task>
     <servers />
   </component>

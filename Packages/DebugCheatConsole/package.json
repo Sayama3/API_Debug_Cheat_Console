@@ -1,0 +1,15 @@
+{
+  "name": "com.sayama.debugcheatconsole",
+  "version": "0.1.1",
+  "displayName": "Debug Cheat Console",
+  "description": "This package is a tool that display a Debug Console where other script can subscribe and add there own command.\n\nVery useful for testing the game without redo everything everytime.\n\n/!\\ Be carefull, you need to create the Manager from the menu on the top and mostly \n\nif you use the InputSystem musn't forget to associate the CallbackFunction to the PlayerInput",
+  "keywords": [
+    "Debug",
+    "Cheat",
+    "Console"
+  ],
+  "author": {
+    "name": "Sayama"
+  },
+  "type": "tool"
+}

@@ -7,23 +7,21 @@
       <e p="API_Debug_Cheat_Console.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Debug_Cheat_Console" t="Include">
-          <e p="CheatConsoleManager.cs" t="Include" />
-          <e p="DebugCommand.cs" t="Include" />
-          <e p="Template" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="TemplateGameScript.cs" t="Include" />
+        <e p="Tester.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive">
+        <e p="DebugCheatConsole" t="Include">
+          <e p="Runtime" t="Include">
+            <e p="CheatConsoleManager.cs" t="Include" />
+            <e p="Preset" t="Include">
+              <e p="sayama.DebugCheatConsole.Runtime.Preset.asmref" t="Include" />
             </e>
-          </e>
-          <e p="Usefull" t="Include">
-            <e p="InputSystem" t="Include">
-              <e p="Input_Player.cs" t="Include" />
-            </e>
+            <e p="sayama.DebugCheatConsole.Runtime.asmdef" t="Include" />
           </e>
         </e>
       </e>
-      <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
+      <e p="sayama.DebugCheatConsole.Runtime.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>

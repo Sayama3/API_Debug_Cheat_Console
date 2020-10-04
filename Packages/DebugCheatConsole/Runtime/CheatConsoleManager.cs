@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
+using UnityEditor.Animations;
+using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Switch;
+using UnityEngine.InputSystem.UI;
+using Object = UnityEngine.Object;
 
 namespace Debug_Cheat_Console
 {
+	[AddComponentMenu("Debug_Cheat_Console/CheatConsoleManager")]
 	public class CheatConsoleManager : MonoBehaviour
 	{
 
@@ -23,25 +29,14 @@ namespace Debug_Cheat_Console
 			{
 				if (_instance == null)
 				{
-					Instance = Instantiate(new GameObject("CheatConsoleManager Object", new[] {typeof(CheatConsoleManager)}).GetComponent<CheatConsoleManager>());
+					Instance = new GameObject("CheatConsoleManager Object", typeof(CheatConsoleManager)).GetComponent<CheatConsoleManager>();
 				}
 				
 				return _instance;
 			}
 
-			set
-			{
-				if (_instance == null)
-				{
-					_instance = value;
-				}
-				else
-				{
-					Destroy(value);
-				}
-			}
+			set => _instance = value;
 		}
-		
 
 		#endregion
 		
@@ -69,6 +64,31 @@ namespace Debug_Cheat_Console
 		/// </summary>
 		public bool Initialize => _initialize;
 
+		public GUIStyle ButtonStyle
+		{
+			get => buttonStyle;
+			set => buttonStyle = value;
+		}
+
+		#endregion
+
+		#region Editor
+
+#if UNITY_EDITOR
+		[MenuItem("Debug_Cheat_Console/Create CheatConsoleManager")]
+		public static void CreateDebugCheatManagerObject()
+		{
+			CheatConsoleManager[] list = FindObjectsOfType<CheatConsoleManager>();
+			foreach (var obj in list)
+				DestroyImmediate(obj.gameObject,false);
+			
+			var instance = new GameObject("CheatConsoleManager Object", typeof(CheatConsoleManager));
+			
+			Preset preset = AssetDatabase.LoadAssetAtPath<Preset>("Packages/com.sayama.debugcheatconsole/Runtime/Preset/Default_CheatConsoleManager.preset");
+			preset?.ApplyTo(instance.GetComponent<CheatConsoleManager>());
+		}
+#endif
+
 		#endregion
 
 		#region Commands
@@ -92,11 +112,17 @@ namespace Debug_Cheat_Console
 
 		private void Awake()
 		{
+			if (_instance != null)
+			{
+				Destroy(gameObject);
+				return;
+			}
+
 			Instance = this;
 			InitializeCommands();
+			DontDestroyOnLoad(gameObject);
 			_initialize = true;
 		}
-	
 
 		private void InitializeCommands()
 		{
@@ -116,6 +142,8 @@ namespace Debug_Cheat_Console
 
 		#region Input
 
+#if ENABLE_INPUT_SYSTEM
+		
 		public void OnToggleDebug(InputAction.CallbackContext ctx)
 		{
 			if (!ctx.performed) return;
@@ -130,6 +158,25 @@ namespace Debug_Cheat_Console
 			HandleInput();
 			_input = "";
 		}
+	
+#else
+
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.BackQuote))
+			{
+				_showConsole = !_showConsole;
+			}
+
+			if (Input.GetKeyDown(KeyCode.Return))
+			{
+				HandleInput();
+				_input = "";
+			}
+		}
+
+#endif
+
 
 		#endregion
 
@@ -224,5 +271,49 @@ namespace Debug_Cheat_Console
 		}
 
 		#endregion
+	}
+	
+	
+	/// <summary>
+	/// A Class with all information needed from a command
+	/// </summary>
+	public class DebugCommandBase
+	{
+		#region Variable
+
+		private string _commandID;
+		private string _commandDescription;
+		private string _commandFormat;
+
+		#endregion
+
+		#region Getters/Setters
+
+		/// <summary>
+		/// The Id of the command
+		/// </summary>
+		public string CommandID => _commandID;
+		/// <summary>
+		/// The description of the command. What does he do
+		/// </summary>
+		public string CommandDescription => _commandDescription;
+		/// <summary>
+		/// The format of the command, (name + every parameters) <br />
+		/// Useful in the HELP command for exemple
+		/// </summary>
+		public string CommandFormat => _commandFormat;
+
+		#endregion
+
+
+		public DebugCommandBase(string id, string description, string format)
+		{
+			_commandID = id;
+			_commandDescription = description;
+			_commandFormat = format;
+		}
+
+		public DebugCommandBase(){}
+
 	}
 }
