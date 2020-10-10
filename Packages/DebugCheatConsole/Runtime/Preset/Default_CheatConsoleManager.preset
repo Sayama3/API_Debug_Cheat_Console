@@ -340,4 +340,144 @@ Preset:
     propertyPath: buttonStyle.m_StretchHeight
     value: 1
     objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Name
+    value: Debug_Cheat_Console
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Id
+    value: be752deb-6399-43ae-8260-4725d66c63bd
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Asset
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_Name
+    value: Toggle Action
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_ExpectedControlType
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_Id
+    value: e346a77a-88a7-4865-a67f-89eaab555cb5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[0].m_SingletonActionBindings.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_Name
+    value: Return Action
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_ExpectedControlType
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_Id
+    value: bdeb35ed-29cd-4fd7-9a12-7e25c6b53133
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Actions.Array.data[1].m_SingletonActionBindings.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Id
+    value: 31e89303-053a-42a3-9203-ff00e769bf52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Path
+    value: <Keyboard>/backquote
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Interactions
+    value: Press
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Action
+    value: Toggle Action
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[0].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Id
+    value: 8e4618f8-7845-4079-9c41-db7457730a78
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Path
+    value: <Keyboard>/enter
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Interactions
+    value: Press
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Action
+    value: Return Action
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _actionMap.m_Bindings.Array.data[1].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
   m_ExcludedProperties: []

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
-using UnityEditor.Animations;
-using UnityEditor.Presets;
 using UnityEngine;
+
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Switch;
-using UnityEngine.InputSystem.UI;
-using Object = UnityEngine.Object;
+#endif
 
 namespace Debug_Cheat_Console
 {
@@ -29,7 +26,7 @@ namespace Debug_Cheat_Console
 			{
 				if (_instance == null)
 				{
-					Instance = new GameObject("CheatConsoleManager Object", typeof(CheatConsoleManager)).GetComponent<CheatConsoleManager>();
+					_instance = new GameObject("CheatConsoleManager Object", typeof(CheatConsoleManager)).GetComponent<CheatConsoleManager>();
 				}
 				
 				return _instance;
@@ -42,6 +39,8 @@ namespace Debug_Cheat_Console
 		
 		#region Variables
 
+		[SerializeField] private char beginningChar = '>';
+		
 		[SerializeField]
 		private GUIStyle buttonStyle = new GUIStyle();
 		
@@ -50,8 +49,6 @@ namespace Debug_Cheat_Console
 		private bool _showHelp;
 
 		private string _input;
-		
-		private PlayerInput _playerInput;
 
 		private bool _initialize = false;
 		
@@ -75,7 +72,8 @@ namespace Debug_Cheat_Console
 		#region Editor
 
 #if UNITY_EDITOR
-		[MenuItem("Debug_Cheat_Console/Create CheatConsoleManager")]
+		
+		[UnityEditor.MenuItem("Tools/Debug_Cheat_Console/Create CheatConsoleManager",false)]
 		public static void CreateDebugCheatManagerObject()
 		{
 			CheatConsoleManager[] list = FindObjectsOfType<CheatConsoleManager>();
@@ -84,7 +82,7 @@ namespace Debug_Cheat_Console
 			
 			var instance = new GameObject("CheatConsoleManager Object", typeof(CheatConsoleManager));
 			
-			Preset preset = AssetDatabase.LoadAssetAtPath<Preset>("Packages/com.sayama.debugcheatconsole/Runtime/Preset/Default_CheatConsoleManager.preset");
+			UnityEditor.Presets.Preset preset = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEditor.Presets.Preset>("Packages/com.sayama.debugcheatconsole/Runtime/Preset/Default_CheatConsoleManager.preset");
 			preset?.ApplyTo(instance.GetComponent<CheatConsoleManager>());
 		}
 #endif
@@ -140,46 +138,6 @@ namespace Debug_Cheat_Console
 		
 		#region ConsoleCheat
 
-		#region Input
-
-#if ENABLE_INPUT_SYSTEM
-		
-		public void OnToggleDebug(InputAction.CallbackContext ctx)
-		{
-			if (!ctx.performed) return;
-			
-			_showConsole = !_showConsole;
-		}
-
-		public void OnReturn(InputAction.CallbackContext ctx)
-		{
-			if (!ctx.performed || !_showConsole) return;
-			
-			HandleInput();
-			_input = "";
-		}
-	
-#else
-
-		private void Update()
-		{
-			if (Input.GetKeyDown(KeyCode.BackQuote))
-			{
-				_showConsole = !_showConsole;
-			}
-
-			if (Input.GetKeyDown(KeyCode.Return))
-			{
-				HandleInput();
-				_input = "";
-			}
-		}
-
-#endif
-
-
-		#endregion
-
 		private Vector2 _scroll;
 		private void OnGUI()
 		{
@@ -216,7 +174,8 @@ namespace Debug_Cheat_Console
 			
 			GUI.Box(new Rect(0,y, Screen.width,30), "" );
 			GUI.backgroundColor = new Color(0f,0f,0f,0f);
-			_input = GUI.TextField(new Rect(10f, y + 5f, Screen.width - 20f, 20f), _input);
+			GUI.TextArea(new Rect(10f, y + 5f, 20f, 20f), beginningChar.ToString()); //BeginningChar
+			_input = GUI.TextField(new Rect(22.5f, y + 5f, Screen.width - 32.5f, 20f), _input); //The input
 			
 		}
 
@@ -233,6 +192,50 @@ namespace Debug_Cheat_Console
 			}
 			
 		}
+
+		#endregion
+
+		
+		#region Input
+
+#if ENABLE_INPUT_SYSTEM
+		
+		public void OnToggleDebug(InputAction.CallbackContext ctx)
+		{
+			if (!ctx.performed) return;
+			
+			_showConsole = !_showConsole;
+			if (!_showConsole)
+				_input = "";
+		}
+
+		public void OnReturn(InputAction.CallbackContext ctx)
+		{
+			if (!ctx.performed || !_showConsole) return;
+			
+			HandleInput();
+			_input = "";
+		}
+		
+
+#else
+
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.BackQuote))
+			{
+				_showConsole = !_showConsole;
+			}
+
+			if (Input.GetKeyDown(KeyCode.Return))
+			{
+				HandleInput();
+				_input = "";
+			}
+		}
+
+#endif
+
 
 		#endregion
 
