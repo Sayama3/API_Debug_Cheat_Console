@@ -1,0 +1,52 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "InGame",
+            "id": "5d16ca73-468e-4b63-b0d8-5b27b868ce3a",
+            "actions": [
+                {
+                    "name": "OpenConsole",
+                    "type": "Button",
+                    "id": "1a9a2bf1-35e2-40f2-a6f0-ff9e17b56d68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ReturnAction",
+                    "type": "Button",
+                    "id": "8baa5c24-9b96-4c40-9eaa-43c0d595355b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cbf81905-457e-41ae-ac1c-f336b6d03c1c",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenConsole",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e4bc177-d5cb-4f44-9701-a3121092b9c5",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReturnAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
