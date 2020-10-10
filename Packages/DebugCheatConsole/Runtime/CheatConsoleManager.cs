@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -39,10 +40,12 @@ namespace Debug_Cheat_Console
 		
 		#region Variables
 
-		[SerializeField] private char beginningChar = '>';
-		
+		[Header("Button Style Parameters")]
 		[SerializeField]
 		private GUIStyle buttonStyle = new GUIStyle();
+
+		[Header("User Input Parameters")]
+		[SerializeField] private char beginningChar = '>';
 		
 		private bool _showConsole;
 
@@ -181,11 +184,13 @@ namespace Debug_Cheat_Console
 
 		private void HandleInput()
 		{
+			if (_input == null || _input == "") return;
+			
 			string[] properties = _input.Split(' ');
 
 			foreach (DebugCommandBase commandBase in _dicoCommandsActivation.Keys)
 			{
-				if (properties[0].Contains(commandBase.CommandID))
+				if (properties[0]?.Contains(commandBase.CommandID)??false)
 				{
 					_dicoCommandsActivation[commandBase].Invoke(commandBase,properties);
 				}
@@ -197,14 +202,22 @@ namespace Debug_Cheat_Console
 
 		
 		#region Input
+		
+		
+		[Header("Input Event Parameters",order = 3)]
+		public UnityEvent<bool> onToggleDebug;
+		public UnityEvent<string> onInputReturn;
+		
 
 #if ENABLE_INPUT_SYSTEM
-		
+
+
 		public void OnToggleDebug(InputAction.CallbackContext ctx)
 		{
 			if (!ctx.performed) return;
 			
 			_showConsole = !_showConsole;
+			onToggleDebug?.Invoke(_showConsole);
 			if (!_showConsole)
 				_input = "";
 		}
@@ -214,23 +227,47 @@ namespace Debug_Cheat_Console
 			if (!ctx.performed || !_showConsole) return;
 			
 			HandleInput();
+			onInputReturn?.Invoke(_input);
 			_input = "";
 		}
+		
 		
 
 #else
 
+		[Header("Input Parameters",order = 2)]
+		[SerializeField]
+		private KeyCode _onToggleDebug = KeyCode.Quote;
+		[SerializeField] 
+		private KeyCode _onReturn = KeyCode.Return;
+
+		[SerializeField] 
+		private bool _debugKeyPress = false;
+
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.BackQuote))
+			if (Input.GetKeyDown(_onToggleDebug))
 			{
 				_showConsole = !_showConsole;
+				onToggleDebug?.Invoke(_showConsole);
+				if (!_showConsole)
+					_input = "";
 			}
 
-			if (Input.GetKeyDown(KeyCode.Return))
+			if (Input.GetKeyDown(_onReturn) && _showConsole)
 			{
 				HandleInput();
+				onInputReturn?.Invoke(_input);
 				_input = "";
+			}
+
+			if (_debugKeyPress)
+			{
+				foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
+				{
+					if(Input.GetKeyDown(key))
+						Debug.Log("Key press is " + key);
+				}
 			}
 		}
 
